@@ -1,0 +1,66 @@
+<!--====== Header Section Start ======-->
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<title> UnBillIt: Transform Your Bilss</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+	<header>
+		<nav class="navigation">
+
+			<!-- Logo -->
+			<div class="logo">
+				<img src="jolly.png">
+			</div>
+			
+			<!-- Navigation -->
+			<ul class="menu-list">
+				<li><a href="home.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+                <li><a href="#">Services</a></li>
+				<li><a href="#">Project</a></li>
+				<li><a href="#">User</a></li> 
+			</ul>
+		</nav>
+    
+    <!-- ==== Intro Section Start ==== -->
+		<div class="intro-section" id="home">
+			<div class="intro-content">
+        	<h2>Who are we?</h2>
+				<p class="change-container">
+					We are an organization that help you with your daily bills that you can't remember easily and sometimes you has to pay extra bucks.
+				</p>
+				<h2>How we help you with?</h2>
+      <p class="tagline">
+        We just remember you daily expenses like milk man, news paper man and many others. And in the month end we gave you the bill to pay. You can directly send the to his account through upi method or card payment with secure server
+        </p>
+				
+
+			
+			</div>
+		</div>	
+	</header>
+<script>
+	$(document).ready(function(){
+
+    //hamburger Toggle
+    $('.humbarger').click(function(event){
+    $('.menu-list').slideToggle(500);
+    event.preventDefault();
+    
+    $('.menu-list li a').click(function(event) {
+        if ($(window).width() < 768) {
+          $('.menu-list').slideUp(500);
+          event.preventDefault(); 
+        }
+      });
+});
+
+});
+</script>	
+</body>
+
+</html>
