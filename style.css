@@ -87,12 +87,14 @@ header .navigation .menu-list li a {
   display: block;
   color: #4e8897;
 }
-.dropdown-content a:hover {background-color: #45e849;}
+.dropdown-content a:hover {
+  background-color: #45e849;
+}
 .fa-caret-down {
   position: absolute;
   color: white;
   float:right;
-  margin-right: 0.5rem;
+  margin-right: 0.9rem;
 
 }
 
@@ -231,6 +233,10 @@ header .navigation .menu-list li a {
   animation: revealNextWord 6s cubic-bezier(0.57, 1.52, 0.9, 1.08) 4.5s infinite;
 }
 
+.tagline{
+  padding-left: 50px;
+  padding-right: 50px;
+}
 @keyframes revealNextWord {
   0% { 
     opacity: 0.3; 
