@@ -77,7 +77,7 @@ header .navigation .menu-list li a {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .dropdown-content a{
-  color: #4564f3;
+  color: #0f1428;
   padding: 16px 25px;
   text-decoration: none;
   display: block;
@@ -233,10 +233,6 @@ header .navigation .menu-list li a {
   animation: revealNextWord 6s cubic-bezier(0.57, 1.52, 0.9, 1.08) 4.5s infinite;
 }
 
-.tagline{
-  padding-left: 50px;
-  padding-right: 50px;
-}
 @keyframes revealNextWord {
   0% { 
     opacity: 0.3; 
@@ -284,8 +280,12 @@ header .navigation .menu-list li a {
 }
 
 .intro-section .intro-content .header-btn a:hover{
-  color: #b1d4e0;
+  color: #b1d5e0;
+
 }
+
+
+
 
 .intro-section .intro-content .header-btn a:hover:before{
   width: 170%;
@@ -388,27 +388,12 @@ header .navigation .menu-list li a {
   }
 
 }
-li a .servicesbtn
-{
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-li a: hover .services:hover .serivcesbtn
-{
-  background-color: #4CAF50;
-}
-li .services
-{
-  display: inline-block;
-}
+
 .dropdown-content
 {
   display: none;
   position: absolute;
-  background-color: grey;
+  background-color: #b1d4e0;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -423,7 +408,7 @@ li .services
 }
 .dropdown-content a:hover
 {
-  background-color:#4CAF50;
+  background-color:#779CAB;
 }
 .user:hover .dropdown-content
 {
@@ -435,7 +420,43 @@ li a.active
   color: white;
 }
 
+.contact-container a{
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #313B72;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.contact-container a:before{
+  position: absolute;
+  content: ""; 
+  top: 0px;
+  height: 100%;
+  left: -25%;
+  width: 0%;
+  background-color: #BA3B46;
+  transform: skew(10deg);
+  transition-duration: 0.4s;
+  z-index: 2;
+}
+.contact-container a:hover{
+  color: #b1d5e0;
+}
+.contact-container a:hover:before{
+   width: 170%;
+}
+.contact-container a span{
+   position: relative;
+  z-index: 9;
+}
+#contact-div{
+  margin-top: 70px;
 
-
+}
 
     
