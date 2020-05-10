@@ -177,7 +177,7 @@ header .navigation .menu-list li a {
 }
 .social-menu ul li{
   list-style: none;
-  margin: 0 80px;
+  margin: 0 24px;
   
 }
 .social-menu ul li .fa{
@@ -198,11 +198,7 @@ header .navigation .menu-list li a {
   border-radius: 50%;
   background-color: #b1d4e0;
   text-align: center;
-  transition: -6s;
-  box-shadow: 0 5px 4px rgba(0,0,0,0.7);
-}
-.social-menu ul li a:hover{
-  transform: translate(0,-10px);
+  box-shadow: 0 5px 4px rgba(4,0,5,2);
 }
 .social-menu ul li:nth-child(1) a:hover{
   background-color: #3b5999;
@@ -274,7 +270,7 @@ header .navigation .menu-list li a {
   left: -25%;
   width: 0%;
   background-color: #3498db;
-  transform: skew(50deg);
+  transform: perspective(50deg);
   transition-duration: 1s;
   z-index: 1;
 }
@@ -283,9 +279,6 @@ header .navigation .menu-list li a {
   color: #b1d5e0;
 
 }
-
-
-
 
 .intro-section .intro-content .header-btn a:hover:before{
   width: 170%;
