@@ -105,7 +105,7 @@ header .navigation .menu-list li a {
 .intro-section {
   height: 100vh;
   position: relative;
-  background: rgba(15, 20, 35, 0.9);
+  background: rgb(34, 49, 63);
 }
 
 .intro-section .intro-content {
