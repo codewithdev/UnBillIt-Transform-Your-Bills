@@ -1,1 +1,454 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html,body{
+  min-width: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+header .navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  min-height: 18vh;
+  min-width: 100%;
+  z-index: 10;
+  background: #0f1428;
+  border-bottom: 2px solid #0c2d48;
+}
+
+header .navigation .logo{
+  margin-left: 40px;
+}
+
+header .navigation .logo img{
+max-height: 70%;
+max-width: 70%;
+
+}
+
+header .navigation .menu-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 55%;
+  margin: auto 80px auto 0;
+}
+
+header .navigation .humbarger {
+  margin-right: 30px;
+  display: none;
+ }
+ 
+header .navigation .humbarger .bar{
+  width: 30px;
+  height: 2px;
+  margin: 7px;
+  background: #b1d4f0;
+ }
+
+header .navigation .menu-list li a {
+  color: #b1d4e0;
+  font-size: 1.78rem;
+  letter-spacing: 4px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: color 1s ease, border 1s ease;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a{
+  color: #0f1428;
+  padding: 16px 25px;
+  text-decoration: none;
+  display: block;
+  font-family: inherit;
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+  color: #4e8897;
+}
+.dropdown-content a:hover {
+  background-color: #45e849;
+}
+.fa-caret-down {
+  position: absolute;
+  color: white;
+  float:right;
+  margin-right: 0.9rem;
+
+}
+
+
+/* ====================
+  Intro Section
+=======================*/
+.intro-section {
+  height: 100vh;
+  position: relative;
+  background: rgb(34, 49, 63);
+}
+
+.intro-section .intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.intro-section .intro-content h1 {
+  color: #b1d4e0;
+  font-size: 5rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-top: 80px;
+}
+
+.intro-section .intro-content h6{
+  margin-top: 5px;
+  color: #b1d4e0;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.intro-section .intro-content p {
+  margin-top: 40px;
+  color: #b1d4e0;
+}
+
+.intro-content .tagline {
+  margin-top:80px;
+}
+
+.intro-section .intro-content .tagline .change-container{
+  position: relative;
+  display: inline-block;
+  width: 560px;
+  margin-bottom: 55px;
+  margin-top: 30px;
+}
+
+.intro-section .intro-content .changing {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  left:0;
+  bottom:0;
+  height:0;
+  opacity:0;
+  color: #b1d4e0;
+  text-transform: uppercase;
+  word-spacing: 5px;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.social-menu ul{
+  position: absolute;
+  top:90%;
+  left: 50%;
+  padding: 0;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.social-menu ul li{
+  list-style: none;
+  margin: 0 24px;
+}
+.social-menu ul li .fa{
+  font-size: 30px;
+  line-height: 57px;
+  transition: -5s;
+  color: #000;
+}
+.social-menu ul li .fa:hover{
+ color:#b1d4e0;
+}
+
+.social-menu ul li a{
+  position: relative;
+  display: block;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #b1d4e0;
+  text-align: center;
+  box-shadow: 0 5px 4px rgba(4,0,5,2);
+}
+.social-menu ul li:nth-child(1) a:hover{
+  background-color: #3b5999;
+}
+.social-menu ul li:nth-child(2) a:hover{
+  background-color: #55acee;
+}
+.social-menu ul li:nth-child(3) a:hover{
+  background-color: #e4405f;
+}
+.social-menu ul li:nth-child(4) a:hover{
+  background-color: #007785;
+}
+
+
+
+
+
+.changing:nth-child(1) {
+  animation: revealNextWord 6s cubic-bezier(0.57, 1.52, 0.9, 1.08) 1.5s infinite;
+}
+
+.changing:nth-child(2) {
+  animation: revealNextWord 6s cubic-bezier(0.57, 1.52, 0.9, 1.08) 3s infinite;
+}
+
+.changing:nth-child(3) {
+  animation: revealNextWord 6s cubic-bezier(0.57, 1.52, 0.9, 1.08) 4.5s infinite;
+}
+
+@keyframes revealNextWord {
+  0% { 
+    opacity: 0.3; 
+    height: 0.0; 
+  }
+  10% { 
+    opacity: 1; 
+    height:1.2em; 
+  }
+  20% { 
+    opacity: 1; 
+    height:1.2em; 
+  }
+  28% { 
+    opacity: 0; 
+    height:1.2em; 
+  }
+  
+}
+
+.intro-section .intro-content .header-btn a{
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #3498db;
+  background-color: #b1d4e0;
+  padding: 15px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.intro-section .intro-content .header-btn a:before{
+  position: absolute;
+  content: ""; 
+  top: 0px;
+  height: 100%;
+  left: -25%;
+  width: 0%;
+  background-color: #3498db;
+  transform: perspective(50deg);
+  transition-duration: 1s;
+  z-index: 1;
+}
+
+.intro-section .intro-content .header-btn a:hover{
+  color: #b1d5e0;
+
+}
+
+.intro-section .intro-content .header-btn a:hover:before{
+  width: 170%;
+
+}
+
+.intro-section .intro-content .header-btn a span{
+  position: relative;
+  z-index: 9;
+}
+
+/* ====================
+  Responsive Section
+=======================*/
+
+/* Tablet desktop :768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  header .navigation .menu-list {
+    width: 60%;
+  }
+
+  header .navigation .menu-list li a{
+    font-size: 1rem;
+  }
+
+}
+
+/* Large Mobile :480px. */
+
+@media only screen and (max-width: 767px) {
+
+  header .navigation .menu-list {
+    position: absolute;
+    top: 12vh;
+    min-width: 100%;
+    background: rgba(15, 20, 35, 0.99);
+    text-align: center;
+    display: none;
+  }
+
+  header .navigation .menu-list li {
+    display: block;
+  }
+
+  header .navigation .menu-list li a {
+    display: block;
+    padding: 20px;
+    transition: color 1s ease, padding 1s ease, background-color 1s ease;
+
+  }
+
+  header .navigation .menu-list li a:hover{
+    color: #b1d4e0;
+    padding-left: 30px;
+    background: rgba(177, 212, 224, 0.2);
+  }
+
+
+  header .navigation .humbarger{
+    display: block;
+  }
+
+  .intro-section .intro-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .intro-section .intro-content h6 {
+    font-size: 1.4rem;
+  }
+
+  .intro-section .intro-content .changing {
+    font-size: 1.5rem;
+  }
+
+  .intro-section .intro-content .header-btn a{
+    font-size: 1.25rem;
+  }
+
+}
+
+
+/* small mobile :320px. */
+
+@media only screen and (max-width: 479px) {
+
+  .intro-inner .intro-content h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  .nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+  .intro-inner .intro-content p {
+    margin-top: 10px;
+  }
+
+}
+
+.dropdown-content
+{
+  display: none;
+  position: absolute;
+  background-color: #b1d4e0;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a
+{
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content a:hover
+{
+  background-color:#779CAB;
+}
+.user:hover .dropdown-content
+{
+  display: block;
+}
+li a.active
+{
+  background-color: #4CAF50;
+  color: white;
+}
+
+.contact-container a{
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 5px;
+  background-color: #313B72;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.contact-container a:before{
+  position: absolute;
+  content: ""; 
+  top: 0px;
+  height: 100%;
+  left: -25%;
+  width: 0%;
+  background-color: #BA3B46;
+  transform: skew(10deg);
+  transition-duration: 0.4s;
+  z-index: 2;
+}
+.contact-container a:hover{
+  color: #b1d5e0;
+}
+.contact-container a:hover:before{
+   width: 170%;
+}
+.contact-container a span{
+   position: relative;
+  z-index: 9;
+}
+#contact-div{
+  margin-top: 70px;
+
+}
+
+    
