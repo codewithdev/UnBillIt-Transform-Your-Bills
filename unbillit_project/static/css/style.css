@@ -178,7 +178,6 @@ header .navigation .menu-list li a {
 .social-menu ul li{
   list-style: none;
   margin: 0 24px;
-  
 }
 .social-menu ul li .fa{
   font-size: 30px;
@@ -188,7 +187,7 @@ header .navigation .menu-list li a {
 }
 .social-menu ul li .fa:hover{
  color:#b1d4e0;
-  } 
+}
 
 .social-menu ul li a{
   position: relative;
