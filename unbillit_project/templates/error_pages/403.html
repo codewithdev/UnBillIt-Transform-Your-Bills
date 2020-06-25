@@ -16,10 +16,15 @@
 		border-radius: 1000px;
 		text-decoration: none;
 	}
+
+	.button:active,
+	.button:hover {
+		text-decoration: none;
+	}
 </style>
 <div class="intro-section" id="home">
 	<div class="intro-content">
-		<h1>404 Page not found!...</h1>
+		<h1>403 Access Forbidden</h1>
 		<p><a href="{{url_for('core.home')}}" class="button">Take me home</a></p>
 	</div>
 </div>
