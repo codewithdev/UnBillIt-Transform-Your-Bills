@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UnBillit - Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Login-Box-En.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="login-form">
+
+        <button onclick="window.open('/', '_self');window.close();"
+            style="color: #000; text-decoration: none; float: right;font-size: inherit;font-weight: 700;text-shadow: 0 1px 0 #fff; opacity: 0.5; margin: 15px;font-family: inherit;font-size: inherit;line-height: inherit;">
+            <span area-hidden="true">&times</span>
+        </button>
+        <form method="post">
+            {{form.hidden_tag()}}
+            <h2 class="text-center">Login</h2>
+
+            <div class="form-group">
+
+                <div class="input-group">
+                    {% if form.email.errors %}
+                    {{ form.email(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                        <li><span>{{ error }}</span></li>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.email(class="form-control", placeholder="Email")}}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    {% if form.password.errors %}
+                    {{ form.password(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                        <li><span>{{ error }}</span></li>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{form.password(class="form-control", placeholder="Password")}}
+                    {% endif %}
+
+                </div>
+            </div>
+            <div class="form-group">
+                {{form.submit(class="btn btn-primary login-btn btn-block")}}
+            </div>
+            <div class="clearfix">
+                {{ form.remember_me(class="pull-left") }}
+                {{ form.remember_me.label(class="pull-left checkbox-inline") }}
+                <a href="#" class="pull-right">Forgot Password?</a>
+            </div>
+            <div class="or-seperator"><i>or</i></div>
+            <p class="text-center">Login with your social media account</p>
+            <div class="text-center social-btn">
+                <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i>&nbsp; Facebook</a>
+                <a href="#" class="btn btn-danger"><i class="fa fa-google"></i>&nbsp; Google</a>
+            </div>
+        </form>
+        <p class="text-center text-muted small">Don't have an account? <a href="{{url_for('users.register')}}">Sign up
+                here!</a></p>
+    </div>
+</body>
+
+</html>
