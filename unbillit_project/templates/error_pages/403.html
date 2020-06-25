@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<style>
+	.button:link,
+	.button:visited {
+		font: bold 11px Arial;
+		background-color: #b1d4f0;
+		color: #0c2d48;
+		padding: 18px;
+		text-align: center;
+		display: inline;
+		border: 1px;
+		font-size: medium;
+		border-radius: 1000px;
+		text-decoration: none;
+	}
+
+	.button:active,
+	.button:hover {
+		text-decoration: none;
+	}
+</style>
+<div class="intro-section" id="home">
+	<div class="intro-content">
+		<h1>403 Access Forbidden</h1>
+		<p><a href="{{url_for('core.home')}}" class="button">Take me home</a></p>
+	</div>
+</div>
+{% endblock content %}
