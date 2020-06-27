@@ -24,3 +24,18 @@ class User(db.Model, UserMixin):
         self.last_name = last_name
         self.email = email
         self.password = password
+
+class ContactUs(db.Model):
+
+    __tablename__ = 'contact_us'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(64), nullable=False)
+    email = db.Column(db.String(128), nullable=False)
+    message = db.Column(db.String(2048), nullable=False)
+
+    def init(self, name, email, message):
+
+        self.name = name
+        self.email = email
+        self.message = message
