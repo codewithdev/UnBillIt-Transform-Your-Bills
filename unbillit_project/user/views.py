@@ -121,7 +121,6 @@ def contact_us():
         db.session.commit()
 
         flash('Thank you for contacting us!..', 'success')
-
-        return redirect(url_for('contact_us'))
+        return redirect(url_for('users.contact_us'))
 
     return render_template('contact_form.html', form=form)

@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, IntegerField, TextAreaField
 from wtforms.validators import DataRequired, Email, EqualTo, Length, Regexp
 from werkzeug.security import generate_password_hash, check_password_hash
 from wtforms import ValidationError
@@ -60,5 +60,6 @@ class ContactForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired(), Length(
         min=2, max=24, message='Name must be 2 to 64 characters long')])
     email = StringField('Email', validators=[DataRequired(), Email()])
-    message = StringField('Message', validators=[DataRequired(), Length(
+    message = TextAreaField('Message', validators=[DataRequired(), Length(
         min=4, max=2048, message='Last name must be 4 to 2048 characters long')])
+    submit = SubmitField('Send')
