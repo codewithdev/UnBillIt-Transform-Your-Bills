@@ -14,3 +14,4 @@ if __name__ == '__main__':
 # facebook OAuth
 # prettify contact us page
 # generate reqiurement.txt
+# flask admin functionality
