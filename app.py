@@ -12,6 +12,6 @@ if __name__ == '__main__':
 # email verification with firebase
 # google OAuth
 # facebook OAuth
-# prettify contact us page
+# add contact us page to also send email to an admin
 # generate reqiurement.txt
 # flask admin functionality
