@@ -12,7 +12,8 @@ class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    profile_img = db.Column(db.String(64), nullable=False, default='default_profile.png')
+    profile_img = db.Column(db.String(64), nullable=False,
+                            default='default_profile.png')
     first_name = db.Column(db.String(24), nullable=False)
     last_name = db.Column(db.String(24), nullable=False)
     email = db.Column(db.String(128), unique=True, nullable=False, index=True)

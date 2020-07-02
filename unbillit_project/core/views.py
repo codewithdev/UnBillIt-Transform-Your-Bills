@@ -12,12 +12,6 @@ def home():
 def about():
     return render_template('about.html')
 
-
-@core.route('/contact-us')
-def contact():
-    return render_template('contact_form.html')
-
-
 @core.route('/services')
 def services():
     return render_template('services.html')
