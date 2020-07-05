@@ -26,10 +26,10 @@ class User(db.Model, UserMixin):
         self.email = email
         self.password = password
 
-
+        
 class ContactUs(db.Model):
 
-    tablename = 'contact_us'
+    __tablename__ = 'contact_us'
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), nullable=False)
