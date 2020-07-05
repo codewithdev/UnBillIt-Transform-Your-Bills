@@ -4,24 +4,85 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/Contact-Form-Clean.css')}}">
+    <title>UnBillit - Contact Us</title>
+
 </head>
 
 <body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
     <div class="contact-clean">
-        <form method="post">
+        <form method="POST">
+            <button onclick="window.open('/', '_self');window.close();"
+                            style="color: #000; text-decoration: none;float:right;font-size: inherit;font-weight: 700;text-shadow: 0 1px 0 #fff; opacity: 0.5; margin: 0;font-family: inherit;font-size: inherit;line-height: inherit;">
+                            <span area-hidden="true">&times</span>
+                        </button>
             <h2 class="text-center">Contact us</h2>
-            <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
-            <div class="form-group"><input class="form-control is-invalid" type="email" name="email" placeholder="Email"><small class="form-text text-danger">Please enter a correct email address.</small></div>
-            <div class="form-group"><textarea class="form-control" name="message" placeholder="Message" rows="14"></textarea></div>
-            <div class="form-group"><button class="btn btn-primary" type="submit">send </button></div>
+            <div class="form-group">
+                {{form.hidden_tag()}}
+                {% if form.name.errors %}
+                {{form.name(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.name.errors %}
+                    <li><span>{{ error }}</span></li>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.name(class="form-control" , placeholder="Name")}}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {% if form.email.errors %}
+                {{form.email(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                    <li><span>{{ error }}</span></li>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.email(class="form-control" , placeholder="Email")}}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {% if form.message.errors %}
+                {{form.message(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                    {% for error in form.message.errors %}
+                    <li><span>{{ error }}</span></li>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{form.message(class="form-control", placeholder="Message")}}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{form.submit(class="btn btn-primary")}}
+            </div>
         </form>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

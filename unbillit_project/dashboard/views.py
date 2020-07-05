@@ -8,7 +8,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 dashboard_views = Blueprint('dashboard', __name__)
 
+
 @dashboard_views.route('/welcome')
 @login_required
 def welcome():
-	return render_template('welcome.html')
+    return render_template('welcome.html')
