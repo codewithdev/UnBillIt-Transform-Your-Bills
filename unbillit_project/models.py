@@ -28,7 +28,7 @@ class User(db.Model, UserMixin):
 
         
 class ContactUs(db.Model):
-  
+
     __tablename__ = 'contact_us'
 
     id = db.Column(db.Integer, primary_key=True)
