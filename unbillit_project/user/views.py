@@ -1,8 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, flash, Blueprint, request
-from flask_login import (login_user, login_required, current_user, logout_user)
+from flask_login import login_user, login_required, current_user, logout_user
 from unbillit_project import db
-from unbillit_project.models import User
-from unbillit_project.user.forms import RegistrationForm, LoginForm, UpdateUserForm
+from unbillit_project.models import User, ContactUs
+from unbillit_project.user.forms import RegistrationForm, LoginForm, UpdateUserForm, ContactForm
 from unbillit_project.user.pic_handler import add_profile_pic
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -34,7 +34,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash(
-            f'Accound created for {form.first_name.data} {form.last_name.data}','success')
+            f'Accound created for {form.first_name.data} {form.last_name.data}', 'success')
         return redirect(url_for('users.login'))
 
     return render_template('register.html', form=form)
@@ -102,3 +102,25 @@ def account_info():
         'static', filename='profile_pics/' + current_user.profile_img)
 
     return render_template('account.html', profile_img=profile_img, form=form)
+
+
+# CONTACT US PAGE
+@users.route('/contact-us', methods=['GET', 'POST'])
+def contact_us():
+
+    form = ContactForm()
+
+    if form.validate_on_submit():
+        contact = ContactUs(
+            name=form.name.data,
+            email=form.email.data,
+            message=form.message.data
+        )
+
+        db.session.add(contact)
+        db.session.commit()
+
+        flash('Thank you for contacting us!..', 'success')
+        return redirect(url_for('users.contact_us'))
+
+    return render_template('contact_form.html', form=form)
