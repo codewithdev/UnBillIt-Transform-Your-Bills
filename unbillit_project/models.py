@@ -26,6 +26,7 @@ class User(db.Model, UserMixin):
         self.email = email
         self.password = password
 
+        
 class ContactUs(db.Model):
 
     __tablename__ = 'contact_us'
